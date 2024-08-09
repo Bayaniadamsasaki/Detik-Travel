@@ -1,0 +1,118 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-image: url('images/bali.jpg');
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 500px;
+}
+
+.logo {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6600;
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff8c00;
+}
+
+.hero {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.hero-content {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.hero-image {
+    float: right;
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 50px 0;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet {
+    background-color: #ff6600;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ff8c00;
+}
