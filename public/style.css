@@ -14,7 +14,9 @@ body {
 
 /* Header style */
 header {
-    background: #333 url('images/gambar1.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(74, 228, 255, 0.995)), url('images/gambar1.jpg');
+    background-position: center;
+    background-size: cover;
     padding: 20px;
     text-align: center;
     height: 650px;
@@ -22,16 +24,18 @@ header {
 }
 
 nav {
-    position: sticky;
+    position: fixed;
     top: 20px;
     z-index: 1000;
+    width: 100%;
 }
 
-nav .container {
+nav .container-nav {
     border-radius: 30px;
     background-color: rgba(255, 255, 255, 0.758);
     padding: 0 50px 0 20px;
     display: flex;
+    margin-right: 40px;
     justify-content: space-between;
     align-items: center;
 }
@@ -43,7 +47,9 @@ nav .container {
     align-items: center;
 }
 
-.navbar-menu a, .navbar-logo, .register a {
+.navbar-menu a,
+.navbar-logo,
+.register a {
     text-decoration: none;
     font-weight: 600;
 }
@@ -80,7 +86,8 @@ nav .container {
     /* display: flex; */
 }
 
-.bottom-header h3, .bottom-header h6 {
+.bottom-header h3,
+.bottom-header h6 {
     position: absolute;
     color: #fff;
     font-weight: 800;
@@ -99,7 +106,7 @@ nav .container {
 .bottom-header img {
     position: absolute;
     margin-top: 350px;
-    margin-left: -550px;
+    margin-left: -530px;
     width: 200px;
 }
 
@@ -126,10 +133,11 @@ nav .container {
 .carousel {
     bottom: 50px;
     right: 50px;
+    height: 300PX;
     margin-top: 100px;
     display: flex;
     position: absolute;
-    max-width: 40%; 
+    max-width: 40%;
     overflow-x: scroll;
 }
 
@@ -146,3 +154,478 @@ nav .container {
     flex-shrink: 0;
 }
 
+/* Add this CSS to define the styles for the kotak elements */
+.carousel {
+    display: flex;
+    gap: 10px;
+}
+
+.kotak:hover {
+    opacity: 0.8;
+}
+
+.bottom-header {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/*======================= kode main =============================*/
+
+.container-info {
+    /* width: 100%; */
+    text-align: center;
+    align-items: center;
+    background: rgba(74, 228, 255, 0.995);
+    padding: 0 100px 20px 250px;
+    gap: 80px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+    display: flex;
+}
+
+.program-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    /* max-width: 35000px; */
+}
+
+.text-container {
+    margin-top: 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.cta-button {
+    background-color: #fee903;
+    font-weight: 600;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #FFB400;
+}
+
+.timeline-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.timeline-item {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 40px;
+    /* Sesuaikan padding untuk ruang garis */
+    margin-top: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    /* Posisikan di tengah ikon */
+    width: 2px;
+    height: 100%;
+    border-left: 2px dashed white;
+    z-index: -1;
+    /* Pastikan garis berada di belakang ikon */
+}
+
+.timeline-item:last-child::before {
+    height: calc(100% - 20px);
+    /* Hapus garis di bagian bawah item terakhir */
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    /* Sesuaikan agar ikon berada di tengah garis */
+    top: 0;
+    z-index: 1;
+    /* Pastikan ikon berada di depan garis */
+}
+
+
+.timeline-content {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    /* bold */
+    font-weight: 600;
+}
+
+.timeline-content .date {
+    font-size: 0.9rem;
+    color: #FFB400;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline-item.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container-update {
+    background: url('images/gambar2.jpg') no-repeat linear-gradient(rgba(255, 255, 255, 0.774), rgba(248, 248, 248, 0.5));
+    background-size: cover;
+    margin: 0 auto;
+    padding: 100px 170px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* filter: grayscale(100%);  */
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 20%;
+}
+
+.highlight {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #f39c12;
+
+    margin-left: 20px;
+}
+
+.main-content {
+    margin-right: 50px;
+    margin-left: 70px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: center;
+    background: linear-gradient(#00a2ff66, #00a2ff) no-repeat;
+}
+
+.news-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    /* Tambahkan transition untuk animasi yang halus */
+}
+
+
+.news-content {
+    font-size: 0.8em;
+    color: #fff;
+    /* background-color: #00a2ff; */
+    padding: 10px;
+    text-align: left;
+    border-radius: 0 0 10px 10px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+.news-card:hover .news-content {
+    color: #fee903;
+}
+
+.side-news {
+    flex: 1;
+    /* padding: 20px; */
+    justify-content: space-around;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.news-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover .sub-news-item {
+    color: #00a2ff;
+    transition: transform 0.3s ease;
+}
+
+.news-item img {
+    max-width: 80px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.news-item h3 {
+    font-size: 1em;
+    margin: 0;
+}
+
+.news-item p {
+    color: #999;
+}
+
+.view-other {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 20px;
+    width: 100%;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #00a2ff;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.view-other:hover {
+    background-color: #fee903;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+    color: #fff;
+}
+
+.left-footer {
+    text-align: left;
+}
+
+.right-footer {
+    text-align: right;
+}
+
+.right-footer a {
+    margin-top: 50px;
+}
+
+.thailand-footer {
+    font-family: "DarkCrowItalic";
+    font-size: 80px;
+}
+
+.explore-footer {
+    font-size: 20px;
+    position: absolute;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.by-footer {
+    font-size: 13px;
+    position: absolute;
+    /* margin-left: 180px;*/
+    margin-top: 110px;
+    margin-left: -180px;
+}
+
+.logo-footer {
+    position: absolute;
+    margin-left: 120px;
+    margin-top: -40px;
+}
+
+/*======================= kode main =============================*/
+
+/* responsive */
+@media screen and (max-width: 768px) {
+    header {
+        height: 700px;
+        /* padding-left: 0px; */
+        padding-right: 0;
+    }
+
+    .explore p {
+        margin: 0;
+        font-size: 100px;
+        margin-top: 0;
+        margin-left: -80px;
+    }
+
+    .bottom-header h3,
+    .bottom-header h6 {
+        position: absolute;
+        color: #fff;
+        font-weight: 800;
+    }
+
+    .bottom-header h3 {
+        margin: 20px 0 0 130px;
+        font-size: 25px;
+    }
+    
+    .bottom-header h6 {
+        margin: 130px 0 0 20px;
+        font-size: 15px;
+    }
+
+    .bottom-header img {
+        position: absolute;
+        margin-top: 140px;
+        margin-left: -100px;
+        width: 150px;
+    }
+
+    .carousel {
+        height: 200px;
+        display: flex;
+        position: absolute;
+        max-width: 85%;
+        
+        position: absolute;
+        padding-left: 100px;
+    }
+
+    .kotak {
+        width: 150px;
+        height: 200px;
+        border-radius: 20px;
+        background-color: #fff;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    .tentang-pro {
+        top: 120px;
+        margin-left: -40px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        margin-top: 200px;
+        background-color: #fee903;
+        width: 150px;
+        position: absolute;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
+
+    .container-info {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .image-container img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .timeline-container {
+        padding: 0 20px;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    .timeline-icon {
+        left: 0;
+    }
+
+    .container-update {
+        padding: 50px 20px;
+    }
+
+    .main-content {
+        margin: 0 20px;
+    }
+
+    .news-card {
+        max-width: 100%;
+    }
+
+    .news-content {
+        font-size: 0.7em;
+    }
+
+    .footer-flex {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .right-footer {
+        text-align: center;
+    }
+
+    .left-footer {
+        text-align: center;
+    }
+
+    .right-footer a {
+        margin-top: 20px;
+    }
+
+    .thailand-footer {
+        font-size: 100px;
+    }
+
+    .explore-footer {
+        font-size: 30px;
+        margin-left: 210px;
+        margin-top: 20px;
+    }
+
+    .by-footer {
+        font-size: 13px;
+        margin-top: 130px;
+        margin-left: -200px;
+    }
+
+    .logo-footer {
+        width: 100px;
+        margin-left: -5px;
+        margin-top: -50px;
+    }
+}
