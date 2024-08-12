@@ -489,6 +489,10 @@ nav .container-nav {
         padding-right: 0;
     }
 
+    .container-nav .navbar-menu {
+        display: none;
+    }
+
     .explore p {
         margin: 0;
         font-size: 100px;
